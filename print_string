@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_sring- print a string using _putchar
+ * print_string- print a string using _putchar
  * @arg: argument list
  */
 
