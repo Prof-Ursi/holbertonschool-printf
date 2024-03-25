@@ -8,7 +8,7 @@
 void print_string(va_list arg)
 {
     char *str; 
-    char *str = va_arg(arg, char*);
+    str = va_arg(arg, char*);
 
     while (str != '\0') 
    {
