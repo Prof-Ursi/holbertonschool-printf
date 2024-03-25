@@ -1,7 +1,10 @@
 #ifndef PRINTF_H
 #define PRINTF_H
 #include <stdarg.h>
+#include <unistd.h>
+#include <string.h>
 
+int _putchar(char c);
 int _printf(const char *format, ...);
 
 /**
@@ -11,7 +14,7 @@ int _printf(const char *format, ...);
 struct type
 {
 	char type;
-	void (*f)(va_list);
+	int (*f)(va_list, int);
 };
 typedef struct type type_t;
 */
