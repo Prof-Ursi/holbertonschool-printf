@@ -8,6 +8,9 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+void print_char(va_list arg);
+void print_string(va_list arg);
+char *_itoa(int num, char *str, int base);
 
 /**
  * struct type - used for the printf
