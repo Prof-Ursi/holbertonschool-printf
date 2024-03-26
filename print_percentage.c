@@ -7,5 +7,5 @@
 
 void print_percentage(va_list arg)
 {
- 	_putchar('\%');   
+ 	_putchar('%');   
 }
