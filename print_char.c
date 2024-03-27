@@ -7,5 +7,5 @@
 
 void print_char(va_list arg)
 {
- 	_putchar(va_arg(arg, int));   
+	_putchar(va_arg(arg, int));  
 }
