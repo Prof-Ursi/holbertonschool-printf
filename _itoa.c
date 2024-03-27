@@ -31,8 +31,9 @@ void _reverse(char str[], int length)
  * Return: the converted string
 */
 
-char *_itoa(int num, char *str, int base)
+char *_itoa(int num)
 {
+	char *str;
 	int i = 0;
 
 	if (num == 0)
@@ -42,7 +43,7 @@ char *_itoa(int num, char *str, int base)
 		return (str);
 	}
 
-	if (num < 0 && base == 10)
+	if (num < 0)
 	{
 		num = -num;
 		str[i++] = '-';
@@ -50,10 +51,10 @@ char *_itoa(int num, char *str, int base)
 
 	while (num != 0)
 	{
-		int rem = num % base;
+		int rem = num % 10;
 
 		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
-		num = num / base;
+		num = num / 10;
 	}
 	str[i] = '\0';
 	_reverse(str, i);
