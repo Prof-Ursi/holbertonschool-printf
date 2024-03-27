@@ -3,16 +3,20 @@
 /**
  * print_string- print a string using _putchar
  * @arg: argument list
+ * Return: the number of character
  */
 
-void print_string(va_list arg)
+int print_string(va_list arg)
 {
-    char *str; 
+    int i = 0;
+    char *str;
+    
     str = va_arg(arg, char*);
 
-    while (str != '\0') 
+    while (str[i] != '\0') 
     {
-	_putchar(va_arg(str, char *));
-    str++;
+	_putchar(str[i]);
+    i++;
     }
+    return (i);
 }

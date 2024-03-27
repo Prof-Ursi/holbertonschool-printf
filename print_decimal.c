@@ -5,14 +5,20 @@
  * @arg: argument list
  */
 
-void print_decimal(va_list arg)
+int print_decimal(va_list arg)
 {
-	int i;
+	int i = 0;
+	int j = 0;
 	int num = va_arg(arg, int);
 	char *str = _itoa(num);
 
-	for (i = 0; str[i] != '\0'; i++) 
+	printf("%c", str[i]);
+	while (str[i] != '\0') 
 	{
-		putchar(num);
+		printf("%d", i);
+		_putchar(str[i]);
+		i++;
+		j++;
 	}
+	return (j);
 }

@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list arg_list;
 	int i = 0;
 	int j;
-	void (*f)(va_list);
+	int f = 0;
 	char *separator = "";
 
 	type_t format_list[] = {
@@ -27,25 +27,33 @@ int _printf(const char *format, ...)
 	{
 		j = 0;
 
-		while (j < 4)
+		if (format[i] == '%')
 		{
-			if (format[i] == format_list[j].type)
+			while (j < 4)
 			{
-				while (*separator != '\0')
+				if (format[i + 1] == format_list[j].type)
+				{
+					while (*separator != '\0')
 					{
-					putchar(*separator);
-					separator++;
+						_putchar(*separator);
+						separator++;
 					}
-				f = format_list[j].f;
-				separator = ", ";
-				(*f)(arg_list);
-				break;
+					f += format_list[j].f(arg_list);
+					separator = ", ";
+					i++;
+					break;
+				}
+				j++;
 			}
-			j++;
+		}
+		else
+		{
+			_putchar(format[i]);
 		}
 		i++;
 	}
 
 	va_end(arg_list);
-	_putchar("\n");
+	_putchar('\n');
+	return (f);
 }

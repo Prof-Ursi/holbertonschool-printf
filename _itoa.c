@@ -10,6 +10,7 @@ void _reverse(char str[], int length)
 {
 	int start = 0;
 	int end = length - 1;
+	
 
 	while (start < end)
 	{
@@ -35,6 +36,16 @@ char *_itoa(int num)
 {
 	char *str;
 	int i = 0;
+	int lennum = num;
+
+	while (lennum > 0)
+	{
+		lennum /= 10;
+		i++;
+	}
+	
+	str = malloc(sizeof(char) * (i + 1));
+	i = 0;
 
 	if (num == 0)
 	{
