@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list arg_list;
 	int i = 0;
 	int j;
-	int f = 0;
+	int length = 0;
 
 	type_t format_list[] = {
 		{'c', print_char},
@@ -27,11 +27,11 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
-			while (j < 4)
+			while (j < 5)
 			{
 				if (format[i + 1] == format_list[j].type)
 				{
-					f += format_list[j].f(arg_list);
+					length += format_list[j].f(arg_list);
 					i++;
 					break;
 				}
@@ -43,8 +43,9 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 		}
 		i++;
+		length++;
 	}
 	va_end(arg_list);
 	_putchar('\n');
-	return (f);
+	return (length);
 }
