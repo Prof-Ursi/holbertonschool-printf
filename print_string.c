@@ -19,6 +19,6 @@ int print_string(va_list arg)
 	_putchar(str[i]);
 	i++;
 	}
-	length += strlen(str);
+	length = strlen(str);
 	return (length);
 }
