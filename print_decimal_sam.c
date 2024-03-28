@@ -1,27 +1,31 @@
 #include "main.h"
 
-/**
- * print_decimal- print a decimal using _putchar
- * @arg: argument list
- *
- * Return : length of the decimal number
- */
 
-int print_decimal(va_list arg)
+int print_dec(va_list args)
 {
-	int i = 0;
-	int length = 0;
-	int num = va_arg(arg, int);
-	char *str = _itoa(num);
+	int value;
+	unsigned int absolute_value, a, length = 0, counter = 1;
 
-	length += strlen(str);
+	value = va_arg(args, int);
 
-	printf("%c", str[i]);
-	while (str[i] != '\0') 
+	if (value < 0)
 	{
-		printf("%d", i);
-		_putchar(str[i]);
-		i++;
+		length += _putchar('-');
+		absolute_value = -value;
+	}
+	else
+		absolute_value = value;
+
+	a = absolute_value;
+	while (a > 9)
+	{
+		a /= 10;
+		counter *= 10;
+	}
+	while (counter >= 1)
+	{
+		length += _putchar(((absolute_value / counter) % 10) + '0');
+		counter /= 10;
 	}
 	return (length);
 }
