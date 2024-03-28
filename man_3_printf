@@ -25,26 +25,24 @@ DESCRIPTION
        A character that specifies the type of conversion to be applied.
        The conversion specifiers and their meanings are:
 
-        c   The int argument is converted a unsigned char and the resulting character is          written.
+        c   The int argument is converted a unsigned char and the resulting character is written.
+
+        d, i The int argument is converted to signed decimal notation. The precision gives the minimum number of digits that must appear. 
+        The default precision is 1.
 
        s    The const char * argument is expected to be a pointer to an array of character type
-        (pointer to a string). Characters from the array are written up to a terminating null byte    ('\0') which is not include.
+        (pointer to a string). Characters from the array are written up to a terminating null byte ('\0') which is not include.
 
-        d, i     The int argument is converted to signed decimal notation. The precision gives the minimum number of digits that must appear. The default precision is 1.
-
-        s   The spring 
 
         %    A '%' is written. No argument is converted. The complete conversion specification is '%%'.
 
 RETURN VALUE         
 
-       Upon successful return, these functions return the number of
-       characters printed excluding the null byte used to end output to
+       Upon successful return, these functions return the number of characters printed excluding the null byte used to end output to
        strings. If an output error is encountered, a negative value is returned.
 
 BUGS
-        This function do
-
+        This function don't take any other covnersiton specifiers than 'c', 'd', 'i' or 's'.
 
 AUTHORS
-        This manual page was written by Samantha Jouini
+        This manual page was written by Aurélien Bouillé & Samantha Jouini.
