@@ -3,9 +3,8 @@
 /**
  * print_percentage - print a percentage using _putchar
  * @arg: argument list
- * Return : 1
+ * Return: 1
  */
-
 
 int print_percentage(va_list arg)
 {
