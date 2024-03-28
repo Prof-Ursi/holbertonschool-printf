@@ -20,9 +20,7 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'%', print_percentage}
 	};
-
 	va_start(arg_list, format);
-
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
@@ -46,7 +44,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-
 	va_end(arg_list);
 	_putchar('\n');
 	return (f);
