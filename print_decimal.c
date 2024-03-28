@@ -8,19 +8,29 @@
 
 int print_decimal(va_list arg)
 {
-	int i = 0;
-	int lenght = 0;
-	int num = va_arg(arg, int);
-	char *str = _itoa(num);
+	int value;
+	unsigned int absolute_value, a, length = 0, counter = 1;
 
-	lenght += strlen(str);
+	value = va_arg(arg, int);
 
-	printf("%c", str[i]);
-	while (str[i] != '\0')
+	if (value < 0)
 	{
-		printf("%d", i);
-		_putchar(str[i]);
-		i++;
+		length += _putchar('-');
+		absolute_value = -value;
 	}
-	return (lenght);
+	else
+		absolute_value = value;
+
+	a = absolute_value;
+	while (a > 9)
+	{
+		a /= 10;
+		counter *= 10;
+	}
+	while (counter >= 1)
+	{
+		length += _putchar(((absolute_value / counter) % 10) + '0');
+		counter /= 10;
+	}
+	return (length);
 }
