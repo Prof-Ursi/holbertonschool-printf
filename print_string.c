@@ -10,7 +10,8 @@ int print_string(va_list arg)
 {
     int i = 0;
     char *str;
-    
+    int length = 0;
+
     str = va_arg(arg, char*);
 
     while (str[i] != '\0') 
@@ -18,5 +19,6 @@ int print_string(va_list arg)
 	_putchar(str[i]);
     i++;
     }
-    return (i);
+    length += strlen(str);
+	return (length);
 }
