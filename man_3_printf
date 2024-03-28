@@ -10,7 +10,7 @@ SYNOPSIS
 int _printf(const char *format, ...);
 
 DESCRIPTION
-     The functions _printf() write an output to a stdout under the control of a format string that specifies how the subsequent arguments are converted for output.
+     The function _printf() write an output to a stdout under the control of a format string that specifies how the subsequent arguments are converted for output.
 
    Format of the format string
        The format string is a character string who needs to begin and end in its initial shift state, if any.The format string is composed of at least one directives who are copied unchanged to the output stream; and of the conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier. 
@@ -19,7 +19,7 @@ DESCRIPTION
 
            %conversion
 
-       The arguments must correspond properly (after type promotion) with the conversion specifier.
+       The arguments must correspond properly with the conversion specifier.
 
    Conversion specifiers
        A character that specifies the type of conversion to be applied.
@@ -30,7 +30,7 @@ DESCRIPTION
         d, i The int argument is converted to signed decimal notation. The precision gives the minimum number of digits that must appear. 
         The default precision is 1.
 
-       s    The const char * argument is expected to be a pointer to an array of character type
+        s   The const char * argument is expected to be a pointer to an array of character type
         (pointer to a string). Characters from the array are written up to a terminating null byte ('\0') which is not include.
 
 

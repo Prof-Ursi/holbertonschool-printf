@@ -12,13 +12,13 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int j;
 	int f = 0;
-	char *separator = "";
 
 	type_t format_list[] = {
 		{'c', print_char},
 		{'i', print_decimal},
 		{'d', print_decimal},
-		{'s', print_string}
+		{'s', print_string},
+		{'%', print_percentage}
 	};
 
 	va_start(arg_list, format);
@@ -33,13 +33,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == format_list[j].type)
 				{
-					while (*separator != '\0')
-					{
-						_putchar(*separator);
-						separator++;
-					}
 					f += format_list[j].f(arg_list);
-					separator = ", ";
 					i++;
 					break;
 				}
