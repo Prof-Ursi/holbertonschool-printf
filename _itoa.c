@@ -37,6 +37,7 @@ char *_itoa(int num)
 	char *str;
 	int i = 0;
 	int lennum = num;
+	int neg = 0;
 
 	while (lennum > 0)
 	{
@@ -57,7 +58,8 @@ char *_itoa(int num)
 	if (num < 0)
 	{
 		num = -num;
-		str[i++] = '-';
+		neg = num;
+		i++;
 	}
 
 	while (num != 0)
@@ -69,5 +71,7 @@ char *_itoa(int num)
 	}
 	str[i] = '\0';
 	_reverse(str, i);
+	str[i] = '-';
+	free(str);
 	return (str);
 }
