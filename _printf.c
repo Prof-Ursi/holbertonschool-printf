@@ -1,10 +1,10 @@
 #include "main.h"
 
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	int length = 0;
-	int i = 0, j;
+	int i = 0, tmp;
 	va_list args;
 	FT array[] = {
 		{"c", print_char},
@@ -25,16 +25,16 @@ int _printf(const char *format, ...);
 			{
 				if (*array[i].identifier == *(format + 1))
 				{
-					j = array[i].function(args, length);
-					length = j;
+					tmp = array[i].function(args);
+					length = tmp;
 					break;
 				}
 				i++;
 			}
-			if (array[i].identifier)	
+			if (array[i].identifier)
 				format += strlen(array[i].identifier) + 1;
 		}
-		write (1, format, 1);
+		write(1, format, 1);
 		length++;
 		format++;
 	}
