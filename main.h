@@ -9,10 +9,9 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void print_char()
-void print_string()
-void print_int()
-void print_percent()
+int print_char(va_list args, int length);
+int print_int(va_list args, int length);
+int print_percent(va_list args, int length);
 
 /**
  * struct format_types - Struct format_types
