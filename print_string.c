@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_string- print a string using _putchar
+ * print_string - print a string using _putchar
  * @arg: argument list
- * Return: the number of character
+ * Return: the number of characters
  */
 
 int print_string(va_list arg)
