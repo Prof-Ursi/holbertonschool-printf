@@ -14,6 +14,9 @@ int _printf(const char *format, ...)
 	type_t format_list[] = {{'c', print_char}, {'i', print_decimal},
 	{'d', print_decimal}, {'s', print_string},	{'%', print_percentage}};
 
+	if (format == NULL || (*format == '%' && !*(format + 1)))
+		return (-1);
+
 	va_start(arg_list, format);
 
 	while (format != NULL && format[i] != '\0')
