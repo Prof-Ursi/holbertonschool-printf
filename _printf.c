@@ -1,7 +1,5 @@
 #include "main.h"
 
-
-
 /**
  * _printf - function that print anything
  * @format:list of types of arguments passed to the function
@@ -31,9 +29,9 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (j == 5)
+			if (j == 5 && format[++i] != '\0')
 			{
-				length += _putchar(format[i++]);
+				length += _putchar(format[i - 1]);
 			}
 
 		}
