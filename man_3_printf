@@ -10,10 +10,13 @@ SYNOPSIS
 int _printf(const char *format, ...);
 
 DESCRIPTION
-     The function _printf() write an output to a stdout under the control of a format string that specifies how the subsequent arguments are converted for output.
+     The function _printf() write an output to a stdout under the control of a format string that specifies 
+     how the subsequent arguments are converted for output.
 
    Format of the format string
-       The format string is a character string who needs to begin and end in its initial shift state, if any.The format string is composed of at least one directives who are copied unchanged to the output stream; and of the conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier. 
+        The format string is composed of at least one directives who are copied unchanged to the output stream; 
+        and of the conversion specifications, each of which results in fetching zero or more subsequent arguments. 
+        Each conversion specification is introduced by the character %, and ends with a conversion specifier. 
 
        The overall syntax of a conversion specification is:
 
@@ -27,11 +30,11 @@ DESCRIPTION
 
         c   The int argument is converted a unsigned char and the resulting character is written.
 
-        d, i The int argument is converted to signed decimal notation. The precision gives the minimum number of digits that must appear. 
-        The default precision is 1.
+        d, i The int argument is converted to signed decimal notation. 
+        By adding a precision, it gives the minimum number of digits that must appear. The default precision is 1.
 
-        s   The const char * argument is expected to be a pointer to an array of character type
-        (pointer to a string). Characters from the array are written up to a terminating null byte ('\0') which is not include.
+        s   The const char * argument is expected to be a pointer to an array of character type (pointer to a string). 
+        Characters from the array are written up to a terminating null byte ('\0') which is not include.
 
 
         %    A '%' is written. No argument is converted. The complete conversion specification is '%%'.
@@ -42,7 +45,7 @@ RETURN VALUE
        strings. If an output error is encountered, a negative value is returned.
 
 BUGS
-        This function don't take any other covnersiton specifiers than 'c', 'd', 'i' or 's'.
+        This function do not take any other conversion specifiers than 'c', 'd', 'i' or 's'.
 
 AUTHORS
         This manual page was written by Aurélien Bouillé & Samantha Jouini.
